@@ -1,50 +1,49 @@
 public class Gluecksspiel {
 
+	Spieler spieler1;
+	Spieler spieler2;
 
-	
+	public Gluecksspiel(Spieler spieler1, Spieler spieler2) {
+		this.spieler1 = spieler1;
+		this.spieler2 = spieler2;
 
-	public static void main(String[] args) {
-	
-		Spieler s1 = new Spieler(16, 1, "Luisa Huber", 42);
-		Spieler s2 = new Spieler(20
-				
-				, 0, "Tom Schmieder", 87);
-		
-		System.out.println(Gluecksspiel(s1, s2));
-		
-		
+
 	}
+	
+public String spielen() {
+	
+    spieler1.eingabe();
+    spieler2.eingabe();
 
-	public static String Gluecksspiel(Spieler spieler1, Spieler spieler2) {
-		int zufallszahl = (int) Math.round(Math.random() * 100);
-		String ausgabe = "";
-		int diff1 = 0;
-		int diff2 = 0;
-		
-		ausgabe = ausgabe+begruessung(spieler1, spieler2);
-		
-		ausgabe = ausgabe+"Zufallszahl= " + zufallszahl+"\n";
-		ausgabe = ausgabe+spieler1.name+" : " + spieler1.ratezahl+"\n";
-		ausgabe = ausgabe+spieler2.name+" : " + spieler2.ratezahl+"\n";
-		
-		diff1 = Math.abs(zufallszahl - spieler1.ratezahl);
-		diff2 = Math.abs(zufallszahl - spieler2.ratezahl);
+	int zufallszahl = (int) Math.round(Math.random() * 100);
+	String ausgabe = "";
+	
+	int diff1 = 0;
+	int diff2 = 0;
+	
+	ausgabe = ausgabe + "Zufallszahl = " + zufallszahl + "\n";
+	ausgabe = ausgabe + spieler1.name + " : " + spieler1.ratezahl + "\n";
+	ausgabe = ausgabe + spieler2.name + " : " + spieler2.ratezahl + "\n";
 
-		if (diff1 == diff2) {
+	diff1 = Math.abs(zufallszahl - spieler1.ratezahl);
+	diff2 = Math.abs(zufallszahl - spieler2.ratezahl);
 
-			ausgabe = ausgabe +"Unentschieden!";
+	if (diff1 == diff2) {
+
+		ausgabe = ausgabe + "Unentschieden!";
+	} else {
+		if (diff1 < diff2) {
+			ausgabe = ausgabe + spieler1.name + " gewinnt!";
 		} else {
-			if (diff1 < diff2) {
-				ausgabe = ausgabe + spieler1.name+" gewinnt!";
-			} else {
-				ausgabe = ausgabe + spieler2.name+" gewinnt!";
-			}
+			ausgabe = ausgabe + spieler2.name + " gewinnt!";
 		}
-		
-		return ausgabe;
 	}
-
-	public static String begruessung(Spieler spieler1, Spieler spieler2) {
+	
+	return ausgabe;
+	
+	
+}
+	public String begruessung() {
 		String begruessung = "";
 		if (spieler1.alter < 18 || spieler1.geschlecht == 2) {
 			begruessung = "Hallo " + spieler1.name + ",\n";
