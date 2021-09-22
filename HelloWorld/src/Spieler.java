@@ -4,7 +4,7 @@ public class Spieler {
 	Scanner sc = new Scanner(System.in);
 	int alter = 19;
 	int geschlecht = 2;
-	String name = "Marek Czernohous";
+	String name = "";
 	int ratezahl;
 
 	public Spieler(int alter, int geschlecht, String name) {
