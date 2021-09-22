@@ -6,12 +6,11 @@ public class Gluecksspiel {
 	public Gluecksspiel(Spieler spieler1, Spieler spieler2) {
 		this.spieler1 = spieler1;
 		this.spieler2 = spieler2;
-
-
 	}
 	
 public String spielen() {
 	
+	begruessung();
     spieler1.eingabe();
     spieler2.eingabe();
 
@@ -43,7 +42,7 @@ public String spielen() {
 	
 	
 }
-	public String begruessung() {
+	public void begruessung() {
 		String begruessung = "";
 		if (spieler1.alter < 18 || spieler1.geschlecht == 2) {
 			begruessung = "Hallo " + spieler1.name + ",\n";
@@ -64,7 +63,7 @@ public String spielen() {
 			}
 		}
 
-		return begruessung;
+		System.out.println(begruessung);
 	}
 
 }

@@ -7,7 +7,6 @@ public class Main {
 		Spieler s2 = new Spieler(20, 0, "Tom Schmieder");
 		Gluecksspiel g1 = new Gluecksspiel(s1,s2);
 		
-		System.out.println(g1.begruessung());
 		System.out.println(g1.spielen());
 	}
 	
